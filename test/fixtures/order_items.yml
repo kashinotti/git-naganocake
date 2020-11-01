@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  count: 1
+  tax_in_purchased_price: 1
+  making_status: 1
+
+two:
+  count: 1
+  tax_in_purchased_price: 1
+  making_status: 1

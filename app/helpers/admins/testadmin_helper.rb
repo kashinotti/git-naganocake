@@ -1,0 +1,2 @@
+module Admins::TestadminHelper
+end
