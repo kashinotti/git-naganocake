@@ -11,24 +11,29 @@
     <div class="container">
       <h1 class="header-title navbar navbar-nav navbar-left">LOGO</h1>
       <ul class="header-list nav navbar-nav navbar-right">
-        <% if customer_signed_in? %>
+        <% if admins_admin_signed_in? %>
           <li>
             <%= link_to '/about' do %>
-              <button class="btn btn-primary">マイページ</button>
+              <button class="btn btn-primary">商品一覧</button>
             <% end %>
           </li>
           <li>
             <%= link_to '/about' do %>
-              <button class="btn btn-success">商品一覧</button>
+              <button class="btn btn-success">会員一覧</button>
             <% end %>
           </li>
           <li>
             <%= link_to '/about' do %>
-              <button class="btn btn-info">カート</button>
+              <button class="btn btn-info">注文履歴一覧</button>
             <% end %>
           </li>
           <li>
-            <%= link_to  destroy_customer_session_path, :method => :delete do %>
+            <%= link_to '/about' do %>
+              <button class="btn btn-danger">注文履歴一覧</button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to  destroy_admins_admin_session_path, :method => :delete do %>
               <button class="btn btn-warning">ログアウト</button>
             <% end %>
           </li>
@@ -49,7 +54,7 @@
             <% end %>
           </li>
           <li>
-            <%= link_to '/about' do %>
+            <%= link_to new_admins_admin_session_path do %>
               <button class="btn btn-warning">ログイン</button>
             <% end %>
           </li>
