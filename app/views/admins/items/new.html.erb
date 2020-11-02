@@ -21,11 +21,11 @@
 
   <div class="item_is_active">
     <h4>販売ステータス</h4>
-    <%= f.select :is_active, [['販売中', 'true'], ['売切', 'false']] %>
+    <%= f.select :is_active, [['販売中', true], ['売切', false]] %>
   </div>
 
   <div class="item_submit">
-    <%= f.submit '変更を保存' %>
+    <%= f.submit '新規登録' %>
   </div>
 
 <% end %>

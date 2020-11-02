@@ -1,0 +1,68 @@
+<h2>商品編集</h2>
+
+<div class="edit_image">
+<%= attachment_image_tag @item, :image_id, format: 'jpg', class: "pull-left profile-img",, size: "80x80" %>
+</div>
+
+
+<%= form_with model:@item, url: admins_item_path, local:true do |f| %>
+
+<div class="edit_name">
+  <tr>
+    <td>
+      商品名
+    </td>
+    <td>
+      <%= f.text_field :name %>
+    </td>
+  </tr>
+</div>
+
+<div class="edit_introduction">
+  <tr>
+    <td>
+      商品説明
+    </td>
+    <td>
+      <%= f.text_area :introduction %>
+    </td>
+  </tr>
+</div>
+
+<!--<div class="edit_genre">-->
+<!--  <tr>-->
+<!--    <td>-->
+<!--      ジャンル-->
+<!--    </td>-->
+<!--    <td>-->
+      <%#= f.text_ :genre %>
+<!--    </td>-->
+<!--  </tr>-->
+<!--</div>-->
+
+<div class="edit_non_taxed_price">
+  <tr>
+    <td>
+      税抜価格
+    </td>
+    <td>
+      <%= f.text_field :non_taxed_price %>
+    </td>
+  </tr>
+</div>
+
+<div class="edit_is_active">
+  <tr>
+    <td>
+      販売ステータス
+    </td>
+    <td>
+      <%= f.select :is_active, [['販売中', true], ['売切', false]] %>
+    </td>
+  </tr>
+</div>
+
+
+<div class="item_submit">
+    <%= f.submit '変更を保存' %>
+</div>

@@ -21,5 +21,7 @@ Rails.application.routes.draw do
     }
     get '/' => 'homes#top'
     get '/about' => 'homes#about'
+    resources :items, only: [:index, :show]
+    resource :customers
   end
 end
