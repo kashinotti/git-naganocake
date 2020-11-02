@@ -26,7 +26,6 @@ header {
 // }
 
 // 管理者のログイン画面のCSS
-
 .admin_email {
   padding-bottom: 30px;
 }
@@ -37,4 +36,14 @@ header {
 
 .admin_login_btn {
   padding-left: 240px;
+}
+
+// 顧客新規登録画面のCSS
+
+.registrations_form {
+  padding-bottom: 10px;
+}
+
+.first_name_label {
+  padding-left: 30px;
 }
