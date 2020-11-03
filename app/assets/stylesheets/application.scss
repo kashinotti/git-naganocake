@@ -57,3 +57,11 @@ header {
 .customer_login_form {
   text-align: right;
 }
+
+// 管理者側の商品一覧のCSS
+
+.new_button {
+  font-size: 40px;
+  display: flex;
+  justify-content: flex-end;
+}
