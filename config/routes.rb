@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     }
     get '/' => 'homes#top'
     resources :items, only: [:create, :index, :new, :edit, :update,:show]
+    resources :customers, only: [:index, :show, :edit, :update]
+    resources :genres, only: [:index, :create, :edit, :update]
   end
 
   scope module: :public do
@@ -19,9 +21,10 @@ Rails.application.routes.draw do
     passwords: 'public/passwords',
     registrations: 'public/registrations'
     }
-    get '/' => 'homes#top'
+    root to: 'homes#top'
     get '/about' => 'homes#about'
     resources :items, only: [:index, :show]
     resource :customers
   end
+  
 end

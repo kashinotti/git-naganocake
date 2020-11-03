@@ -1,4 +1,4 @@
-<%= form_with model:@item, url: admins_items_path, local:true do |f| %>
+<%= form_with model:@item, url: admins_items_path, method: :POST, local:true do |f| %>
 
   <div class="item_name">
     <h4>商品名</h4>
@@ -10,9 +10,15 @@
     <%= f.text_area :introduction %>
   </div>
 
-  <!--<div class="item_genre">-->
-  <!--  <h4>ジャンル</h4>-->
-  <!--</div>-->
+  <div class="item_image_id">
+    <h4>商品画像</h4>
+    <%= f.attachment_field :image %>
+  </div>
+
+  <div class="item_genre">
+    <h4>ジャンル</h4>
+    <%= f.collection_select :genre_id, Genre.all, :id, :name %>
+  </div>
 
   <div class="item_non_taxed_price">
     <h4>税抜価格</h4>

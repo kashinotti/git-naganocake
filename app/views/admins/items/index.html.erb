@@ -8,13 +8,13 @@
     <th>ジャンル</th>
     <th>ステータス</th>
   </tr>
-  
+
   <% @items.each do |item| %>
     <tr>
       <td><%= item.id %></td>
       <td><%= item.name %></td>
       <td><%= item.non_taxed_price %></td>
-      <td><%= item.genre %></td>
+      <td><%= item.genre.name %></td>
       <td><%= item.is_active %></td>
     </tr>
   <% end %>
