@@ -1,7 +1,7 @@
 <h2>商品編集</h2>
 
 <div class="edit_image">
-<%= attachment_image_tag @item, :image_id, format: 'jpg', class: "pull-left profile-img",, size: "80x80" %>
+ <%= attachment_image_tag @item, :image, format: 'jpg', class: "pull-left profile-img", size: "80x80" %>
 </div>
 
 
@@ -29,16 +29,16 @@
   </tr>
 </div>
 
-<!--<div class="edit_genre">-->
-<!--  <tr>-->
-<!--    <td>-->
-<!--      ジャンル-->
-<!--    </td>-->
-<!--    <td>-->
-      <%#= f.text_ :genre %>
-<!--    </td>-->
-<!--  </tr>-->
-<!--</div>-->
+<div class="edit_genre">
+  <tr>
+    <td>
+      ジャンル
+    </td>
+    <td>
+      <%= f.collection_select :genre_id, Genre.all, :id, :name %>
+    </td>
+  </tr>
+</div>
 
 <div class="edit_non_taxed_price">
   <tr>
@@ -66,3 +66,5 @@
 <div class="item_submit">
     <%= f.submit '変更を保存' %>
 </div>
+
+<% end %>
