@@ -13,7 +13,7 @@
       <ul class="header-list nav navbar-nav navbar-right">
         <% if customer_signed_in? %>
           <li>
-            <%= link_to '/about' do %>
+            <%= link_to  customers_path do %>
               <button class="btn btn-primary">マイページ</button>
             <% end %>
           </li>

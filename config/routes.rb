@@ -25,6 +25,8 @@ Rails.application.routes.draw do
     get '/about' => 'homes#about'
     resources :items, only: [:index, :show]
     resource :customers
+    get 'customers/unsubscribe' => 'customers#unsubscribe'
+    put "/customers/:id/withdraw" => "customers#withdraw", as: 'customer_withdraw'
   end
-  
+
 end
