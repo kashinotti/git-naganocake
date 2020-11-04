@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   end
 
   scope module: :public do
+    resource :customers
     devise_for :customers, controllers: {
     sessions: 'public/sessions',
     passwords: 'public/passwords',
@@ -24,7 +25,8 @@ Rails.application.routes.draw do
     root to: 'homes#top'
     get '/about' => 'homes#about'
     resources :items, only: [:index, :show]
-    resource :customers
+    resources :cart_items, only: [:index, :create, :update, :destroy]
+    delete '/cart_items/destroy_all' => 'cart_items#destroy_all', as: 'cart_items_destroy_all'
     get 'customers/unsubscribe' => 'customers#unsubscribe'
     put "/customers/:id/withdraw" => "customers#withdraw", as: 'customer_withdraw'
   end

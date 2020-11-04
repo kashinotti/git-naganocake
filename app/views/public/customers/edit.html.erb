@@ -2,8 +2,7 @@
 
     <h3><span class="label label-default">登録情報編集</span></span></h1>
 
-    <%= form_with model:@customer, url: customers_path, id: 'new_customer', class: 'new_customer', local: true do |f| %>
-        <%= render "public/shared/error_messages", resource: resource %>
+    <%= form_with model:@customer, url: customers_path, method: :patch, id: 'new_customer', class: 'new_customer', local: true do |f| %>
 
        <div class="registrations_form row">
         <label class="col-xs-3">名前</label>
@@ -53,23 +52,13 @@
         </div>
        </div>
 
-       <div class="registrations_form row">
-        <label class="col-xs-3">パスワード(6文字以上)</label>
-        <div class="field col-xs-9">
-          <%= f.password_field :password, autocomplete: "new-password" %>
-        </div>
-       </div>
-
-       <div class="registrations_form row">
-        <label class="col-xs-3">パスワード(確認用)</label>
-        <div class="field col-xs-9">
-          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-        </div>
-       </div>
-
 
         <div class="actions">
-          <%= f.submit "新規登録", class: "btn btn-success center-block" %>
+          <%= f.submit "変更内容を保存する", class: "btn btn-success center-block" %>
         </div>
       <% end %>
+
+      <div>
+        <%= link_to '退会する', customers_unsubscribe_path, class: "btn btn-danger" %>
+      </div>
   </div>
