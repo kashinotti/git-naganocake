@@ -12,13 +12,20 @@
       <p>¥<%= @item.non_taxed_price * 1.1 %>(税込）</p>
     </div>
 
-    <%#= form_with model:@cart_item, url: cart_items_path, local:true do |f| %>
+    <%= form_with model:@cart_item, url: cart_items_path, local:true do |f| %>
 
-    <%#= f.select :count, options_for_select(@cart_item, {selected: cart.count.to_i} ) %>
+    <% if customer_signed_in? %>
+      <%= f.hidden_field :customer_id, :value => current_customer.id %>
+    <% end %>
+      <%= f.hidden_field :item_id, :value => @item.id %>
 
-    <%#= f.submit 'カートに入れる', class: 'btn btn-primary' %>
+    <%= f.number_field :count %>
 
-    <%# end %>
+    <%#= f.select :count, options_for_select(@cart_item, {selected: cart_item.count.to_i} ) %>
+
+    <%= f.submit 'カートに入れる', class: 'btn btn-primary' %>
+
+    <% end %>
 
   </div>
 </div>
