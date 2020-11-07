@@ -6,12 +6,27 @@ class Public::CartItemsController < ApplicationController
 
   def create
     @cart_item = current_customer.cart_items.new(cart_items_params)
-    # @cart_item = Cart_item.new(cart_items_params)
     @cart_item.save
     redirect_to  cart_items_path
   end
 
+  def update
+    @cart_item = CartItem.find(params[:id])
+    @cart_item.update(cart_items_params)
+    redirect_to cart_items_path
+  end
 
+  def destroy
+    @cart_item = CartItem.find(params[:id])
+    @cart_item.destroy
+    redirect_to cart_items_path
+  end
+
+  def destroy_all
+    @cart_items = Customer.find(current_customer.id).cart_items
+    @cart_items.destroy_all
+    redirect_to cart_items_path
+  end
 
   private
 
