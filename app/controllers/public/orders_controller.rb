@@ -27,6 +27,18 @@ class Public::OrdersController < ApplicationController
   def create
     @order = Order.new(orders_params)
     @order.save
+    @cart_items = current_customer.cart_items.all
+
+    @cart_items.each do |cart_item|
+      @order_items = OrderItem.new(order_items_params)
+      @order_items.count = cart_item.count
+      @order_items.item_id = cart_item.item_id
+      @order_items.order_id = @order.id
+      @order_items.tax_in_purchased_price = cart_item.item.non_taxed_price * 1.1
+      @order_items.save
+    end
+
+    current_customer.cart_items.destroy_all
 
     redirect_to orders_complete_path
 
@@ -36,9 +48,12 @@ class Public::OrdersController < ApplicationController
   end
 
   def index
+    @customer = current_customer
+    @orders = @customer.orders
   end
 
   def show
+    @order = Order.find(params[:id])
   end
 
   private
@@ -47,4 +62,7 @@ class Public::OrdersController < ApplicationController
     params.require(:order).permit(:postal_code, :address,:payment_method, :name, :shipping_cost, :total_payment, :order_status, :customer_id)
   end
 
+  def order_items_params
+    params.permit(:count, :item_id, :order_id, :making_status, :tax_in_purchased_price)
+  end
 end

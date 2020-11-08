@@ -3,8 +3,8 @@
 <%= form_with url: orders_confirm_path, method: :post, local:true do |f| %>
   <h3>支払い情報</h3>
     <label>
-      <%= f.radio_button :payment_method, 0 %> クレジットカード <br>
-      <%= f.radio_button :payment_method, 1 %> 銀行振込
+      <%= f.radio_button :payment_method, "credit_card" %> クレジットカード <br>
+      <%= f.radio_button :payment_method, "bank" %> 銀行振込
     </label>
 
     <h3>お届け先</h3>
