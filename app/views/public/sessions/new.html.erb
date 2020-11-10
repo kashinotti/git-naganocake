@@ -34,7 +34,7 @@
   <%# end %>
 
   <div class="actions">
-    <%= f.submit "ログイン", class: "btn btn-primary center-block" %>
+    <p><%= f.submit "ログイン", class: "btn btn-primary public-submit" %></p>
   </div>
 <% end %>
 
@@ -43,4 +43,4 @@
     <%= link_to "こちら", new_customer_registration_path %>から新規登録をしてください。
   </p>
 
-<%= render "public/shared/links" %>
+<%#= render "public/shared/links" %>
