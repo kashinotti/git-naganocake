@@ -13,7 +13,9 @@ Rails.application.routes.draw do
     resources :items, only: [:create, :index, :new, :edit, :update,:show]
     resources :customers, only: [:index, :show, :edit, :update]
     resources :genres, only: [:index, :create, :edit, :update]
-    resources :orders, only: [:index, :show, :update]
+    resources :orders, only: [:index, :show, :update] do
+     resources :order_details, only: [:update]
+    end
   end
 
   scope module: :public do
@@ -33,7 +35,7 @@ Rails.application.routes.draw do
     get '/orders/complete' => 'orders#complete', as: 'orders_complete'
     resources :orders, only: [:index, :show, :new, :create]
     post '/orders/confirm' => 'orders#confirm', as: 'orders_confirm'
-    
+
   end
 
 end
