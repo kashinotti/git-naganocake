@@ -1,3 +1,58 @@
 // Place all the styles related to the public/customers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//マイページのCSS
+
+table {
+  width: 700px;
+}
+
+.mypage_table tr {
+  height: 45px;
+}
+
+.mypage_table th {
+  background-color: silver;
+  width: 20%;
+}
+
+//登録情報編集画面のCSS
+.customer-edit-container {
+  padding-top: 50px;
+}
+
+.customer-edit-container h3 {
+  padding-left: 200px;
+  padding-bottom: 20px;
+}
+
+.customer-edit-botton {
+  display: flex;
+  justifycontent-content: center;
+}
+
+.customer-edit-actions {
+  padding-right: 200px;
+  padding-left: 200px;
+}
+
+.customer-address-form{
+        width: 500px;
+    }
+
+//退会確認画面のCSS
+
+.unsubscribe {
+  padding-top: 200px;
+}
+
+.unsubscribe h3 {
+  padding-bottom: 30px;
+}
+
+.unsubscribe p {
+  padding-bottom: 10px;
+}
+

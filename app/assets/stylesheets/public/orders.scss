@@ -1,3 +1,85 @@
 // Place all the styles related to the public/orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//注文情報入力画面のCSS
+.order-new-head {
+  padding-left: 70px;
+}
+
+.payment-radio {
+  padding-left: 50px;
+}
+
+.address-radio {
+  padding-left: 50px;
+}
+
+.address-detail {
+  padding-left: 50px;
+}
+
+.new-address {
+  width: 700px;
+  margin-left: 100px;
+}
+
+.new-address th {
+  width: 25%;
+}
+
+.new-address-form {
+  padding-bottom: 10px;
+}
+
+.info-submit {
+  padding-top: 20px;
+}
+
+//注文情報確認画面のCSS
+
+.confirm {
+  width: 90%;
+}
+
+.confirm span {
+  margin-left: 200px;
+}
+
+.confirm-table {
+  display: flex;
+}
+
+.confirm-table-1 {
+  width: 700px;
+  margin-left: 100px;
+}
+
+.confirm-table-1 th {
+  backrgound-color: silver;
+}
+
+.confirm-table-1 tr {
+  height: 50px;
+}
+
+.confirm-thead-name {
+  width: 60%;
+}
+
+.confirm-thead {
+  width: 20%;
+}
+
+.confirm-table-2 {
+  width: 200px;
+  margin-left: 100px;
+}
+
+.confirm-table-2 th {
+  backrgound-color: silver;
+}
+
+.confirm-table-2 tr {
+  height: 50px;
+}

@@ -1,90 +1,94 @@
-<h3><span class="label label-default">ショッピングカート</span></span></h1>
+<div class="confirm">
+  <h3><span class="label label-default">注文情報確認</span></span></h1>
 
-<% @sum = 0 %>
-<% @cart_items.each do |cart_item| %>
-<table>
-  <thead>
-    <tr>
-      <th>商品名</th>
-      <th>単価(税込)</th>
-      <th>数量</th>
-      <th>小計</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
+  <div class="confirm-table">
+    <table class="confirm-table-1 table-bordered">
+      <thead>
+        <tr>
+          <th class="confirm-thead-name">商品名</th>
+          <th class="confirm-thead">単価(税込)</th>
+          <th class="confirm-thead">数量</th>
+          <th class="confirm-thead">小計</th>
+          <th class="confirm-thead"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @sum = 0 %>
+        <% @cart_items.each do |cart_item| %>
+          <tr>
+            <td>
+              <%= attachment_image_tag cart_item.item, :image, format: 'jpg', class: "pull-left profile-img", size: "50x50" %>
+              <%= cart_item.item.name %>
+            </td>
+            <td>
+              <%= cart_item.item.non_taxed_price * 1.1 %>
+            </td>
+            <td>
+              <%= cart_item.count %>
+            </td>
+            <td>
+              <%= cart_item.item.non_taxed_price * 1.1 * cart_item.count %>
+              <% @sum += cart_item.item.non_taxed_price * 1.1 * cart_item.count %>
+            </td>
+          </tr>
+          <% end %>
+      </tbody>
+    </table>
+
+    <table class="confirm-table-2 table-bordered ">
       <tr>
-        <td>
-          <%= attachment_image_tag cart_item.item, :image, format: 'jpg', class: "pull-left profile-img", size: "50x50" %>
-          <%= cart_item.item.name %>
-        </td>
-        <td>
-          <%= cart_item.item.non_taxed_price * 1.1 %>
-        </td>
-        <td>
-          <%= cart_item.count %>
-        </td>
-        <td>
-          <%= cart_item.item.non_taxed_price * 1.1 * cart_item.count %>
-          <% @sum += cart_item.item.non_taxed_price * 1.1 * cart_item.count %>
-        </td>
+        <th>送料</th>
+        <td>800</td>
       </tr>
-  </tbody>
-</table>
-<% end %>
-<table>
-  <tr>
-    <th>送料</th>
-    <td>800</td>
-  </tr>
-    <th>商品合計</th>
-    <td><%= @sum %></td>
-  </tr>
-    <th>請求金額</th>
-    <td><%= @sum + 800 %></td>
-  </tr>
-</table>
+        <th>商品合計</th>
+        <td><%= @sum %></td>
+      </tr>
+        <th>請求金額</th>
+        <td><%= @sum + 800 %></td>
+      </tr>
+    </table>
+  </div>
 
-<h3>支払方法</h3>
-<% if @order.payment_method == 0 %>
-  <p>クレジットカード</p>
-<% else @order.payment_method == 1 %>
-  <p>銀行振込</p>
-<% end %>
+  <h3>支払方法</h3>
+  <% if @order.payment_method == 0 %>
+    <p>クレジットカード</p>
+  <% else @order.payment_method == 1 %>
+    <p>銀行振込</p>
+  <% end %>
 
-<h3>お届け先</h3>
+  <h3>お届け先</h3>
 
-  <%= @order.postal_code %>
-  <%= @order.address %> <br>
-  <%= @order.name %>
+    <%= @order.postal_code %>
+    <%= @order.address %> <br>
+    <%= @order.name %>
 
 
 
-<%= form_with model:@order, url: orders_path, method: :post, local:true do |f| %>
+  <%= form_with model:@order, url: orders_path, method: :post, local:true do |f| %>
 
-<%= f.hidden_field :postal_code, value: @order.postal_code %>
+  <%= f.hidden_field :postal_code, value: @order.postal_code %>
 
-<%= f.hidden_field :address, value: @order.address %>
+  <%= f.hidden_field :address, value: @order.address %>
 
-<%= f.hidden_field :name, value: @order.name %>
+  <%= f.hidden_field :name, value: @order.name %>
 
-<%= f.hidden_field :shipping_cost, value: 800 %>
+  <%= f.hidden_field :shipping_cost, value: 800 %>
 
-<% @sum = 0 %>
-<% @cart_items.each do |cart_item| %>
-<% cart_item.item.non_taxed_price * 1.1 * cart_item.count %>
-<% @sum += cart_item.item.non_taxed_price * 1.1 * cart_item.count %>
-<%= f.hidden_field :total_payment, value: @sum %>
-<% end %>
+  <% @sum = 0 %>
+  <% @cart_items.each do |cart_item| %>
+  <% cart_item.item.non_taxed_price * 1.1 * cart_item.count %>
+  <% @sum += cart_item.item.non_taxed_price * 1.1 * cart_item.count %>
+  <%= f.hidden_field :total_payment, value: @sum %>
+  <% end %>
 
-<%= f.hidden_field :order_status, value: "waiting_for_payment" %>
+  <%= f.hidden_field :order_status, value: "waiting_for_payment" %>
 
-<%= f.hidden_field :payment_method, value: @order.payment_method %>
+  <%= f.hidden_field :payment_method, value: @order.payment_method %>
 
-<%= f.hidden_field :customer_id, value: current_customer.id %>
+  <%= f.hidden_field :customer_id, value: current_customer.id %>
 
-<%= f.submit "購入を確定する", class: "btn btn-success" %>
+  <%= f.submit "購入を確定する", class: "btn btn-success" %>
 
-<% end %>
-
-<%#= link_to "購入を確定する",  orders_path, method: :post, class: "btn btn-success" %>
+  <% end %>
+</div>

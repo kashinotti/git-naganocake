@@ -1,4 +1,4 @@
-<div class="container">
+<div class="customer-edit-container container">
 
     <h3><span class="label label-default">登録情報編集</span></span></h1>
 
@@ -41,7 +41,7 @@
        <div class="registrations_form row">
         <label class="col-xs-3">住所</label>
         <div class="field col-xs-9">
-          <%= f.text_field :address %>
+          <%= f.text_field :address, class: "customer-address-form" %>
         </div>
        </div>
 
@@ -52,13 +52,14 @@
         </div>
        </div>
 
+        <div class="customer-edit-botton">
+          <div class="customer-edit-actions">
+            <%= f.submit "変更内容を保存する", class: "btn btn-primary" %>
+          </div>
 
-        <div class="actions">
-          <%= f.submit "変更内容を保存する", class: "btn btn-success center-block" %>
+          <div class="customers_unsubscribe">
+            <%= link_to '退会する', customers_unsubscribe_path, class: "btn btn-danger" %>
+          </div>
         </div>
       <% end %>
-
-      <div>
-        <%= link_to '退会する', customers_unsubscribe_path, class: "btn btn-danger" %>
-      </div>
   </div>
