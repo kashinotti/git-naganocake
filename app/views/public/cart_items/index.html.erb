@@ -28,14 +28,14 @@
             <%= attachment_image_tag cart_item.item, :image, format: 'jpg', class: "pull-left profile-img", size: "50x50" %>
             <%= cart_item.item.name %>
           </td>
-          <td><%= cart_item.item.non_taxed_price * 1.1 %></td>
+          <td><%= (cart_item.item.non_taxed_price * 1.1).round %></td>
           <%= form_with model:cart_item, url: cart_item_path(cart_item.id), method: :patch, local:true do |f| %>
             <td>
               <%= f.number_field :count, class: "cart-count-form" %>
               <%= f.submit '変更', method: :patch, class: "btn btn-primary" %>
             </td>
           <% end %>
-          <td><%= cart_item.item.non_taxed_price * 1.1 * cart_item.count %></td>
+          <td><%= (cart_item.item.non_taxed_price * 1.1 * cart_item.count).round %></td>
           <% @sum += cart_item.item.non_taxed_price * 1.1 * cart_item.count %>
           <td class="cart-delete">
             <%= link_to '削除する', cart_item_path(cart_item.id), method: :delete, class: "btn btn-danger", "data-confirm" => "本当に削除しますか？" %>
@@ -54,7 +54,7 @@
       <table class="total-payment table-bordered pull-right">
         <tr>
           <th>合計金額</th>
-          <td><%= @sum %></td>
+          <td><%= @sum.round %></td>
         </tr>
       </table>
     </div>
