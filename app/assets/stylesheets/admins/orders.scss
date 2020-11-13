@@ -1,3 +1,40 @@
 // Place all the styles related to the admins/orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//注文履歴一覧のCSS
+
+.admins-order-index-table {
+  width: 100%;
+  margin: 30px 0;
+}
+
+.admins-order-index-table th {
+  background-color: silver;
+  height: 40px;
+}
+
+.admins-order-index-table td {
+  height: 50px;
+}
+
+//管理者注文履歴詳細のCSS
+
+.table-2 {
+  width: 100%;
+  display: flex;
+  margin-top: 40px;
+}
+
+.admins-order-show-table th {
+  background-color: silver;
+  height: 40px;
+}
+
+.admins-order-show-table td {
+  height: 50px;
+}
+
+.admins-item-total {
+  width: 150px;
+}

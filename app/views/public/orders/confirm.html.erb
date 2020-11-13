@@ -22,13 +22,13 @@
               <%= cart_item.item.name %>
             </td>
             <td>
-              <%= cart_item.item.non_taxed_price * 1.1 %>
+              <%= (cart_item.item.non_taxed_price * 1.1).round %>
             </td>
             <td>
               <%= cart_item.count %>
             </td>
             <td>
-              <%= cart_item.item.non_taxed_price * 1.1 * cart_item.count %>
+              <%= (cart_item.item.non_taxed_price * 1.1 * cart_item.count).round %>
               <% @sum += cart_item.item.non_taxed_price * 1.1 * cart_item.count %>
             </td>
           </tr>
