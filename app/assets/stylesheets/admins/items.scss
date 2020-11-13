@@ -1,3 +1,19 @@
 // Place all the styles related to the admins/Items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//管理者商品一覧のCSS
+
+.admins-items-index {
+  width: 100%;
+}
+
+.admins-items-index th {
+  background-color: silver;
+  height: 30px;
+}
+
+.admins-items-index td {
+  height: 40px;
+}

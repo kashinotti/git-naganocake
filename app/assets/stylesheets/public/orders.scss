@@ -129,3 +129,40 @@
   height: 60px;
 }
 
+//注文履歴詳細画面のCSS
+
+.order-show-info {
+  width: 100%;
+  display: flex;
+}
+
+
+.order-show-table {
+  width: 700px;
+}
+
+.order-show-table th {
+  background-color: silver;
+}
+
+.payment-info {
+  margin-left: 20px;
+}
+
+.payment-info-table {
+  width: 300px;
+}
+
+.payment-info-table th {
+  background-color: silver;
+}
+
+
+.order-content-table th {
+  height: 50px;
+  background-color: silver;
+}
+
+.order-content-table td {
+  height: 50px;
+}

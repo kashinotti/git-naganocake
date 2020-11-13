@@ -1,10 +1,10 @@
 <div class="container">
-  <h2>商品一覧</h2>
+  <h3><span class="label label-default">管理者画面</span></span></h1>
 
   <%= link_to '+', new_admins_item_path, class: "new_button" %>
 
 
-  <table>
+  <table class="admins-items-index table-bordered">
     <tr>
       <th>商品ID</th>
       <th>商品名</th>
@@ -23,4 +23,8 @@
       </tr>
     <% end %>
   </table>
+</div>
+
+<div class="admins-items-paginate text-center">
+  <%= paginate @items %>
 </div>
