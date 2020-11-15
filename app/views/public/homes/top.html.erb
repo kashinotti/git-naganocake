@@ -37,7 +37,9 @@
         <% @items.first(4).each do |item| %>
           <ul>
             <li>
-              <%= attachment_image_tag item, :image, format: 'jpg', class: "profile-img", size: "150x100" %>
+              <%= link_to item_path(item.id) do %>
+                <%= attachment_image_tag item, :image, format: 'jpg', class: "profile-img", size: "150x100" %>
+              <% end %>
             </li>
             <li>
               <%= item.name %>

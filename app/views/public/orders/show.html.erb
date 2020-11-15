@@ -23,7 +23,13 @@
 
       <tr>
         <th>支払方法</th>
-        <td><%= @order.payment_method %></td>
+        <td>
+           <% if @order.payment_method == 0 %>
+            <p>クレジットカード</p>
+          <% else @order.payment_method == 1 %>
+            <p>銀行振込</p>
+          <% end %>
+        </td>
       </tr>
 
       <tr>
