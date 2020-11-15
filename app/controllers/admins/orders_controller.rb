@@ -14,7 +14,6 @@ class Admins::OrdersController < ApplicationController
   def update
     @order = Order.find(params[:id])
     @order_items = OrderItem.where(order_id: @order.id)
-    # @order.update(orders_params)
     
     if @order.update(orders_params)
 
