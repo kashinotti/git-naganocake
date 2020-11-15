@@ -5,10 +5,22 @@
 
 // 商品一覧のCSS
 
-// .items_list {
-//   display: flex;
-//   // flex-direction: column;
-// }
+.customer-item-genre {
+  width: 200px;
+}
+
+.customer-item-genre ul {
+  list-style: none;
+}
+
+.items_list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.items_list ul {
+  list-style: none;
+}
 
 
 //商品詳細のCSS

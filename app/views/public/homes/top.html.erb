@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-3">
-      <table>
+    <div class="top-genre col-xs-3">
+      <table class="">
         <tr>
           <th>ジャンル検索</th>
         </tr>
@@ -9,7 +9,11 @@
         <tr>
           <td>
             <% @genres.each do |genre| %>
-              <%= genre.name %>
+            <ul>
+              <li>
+                <%= genre.name %>
+              </li>
+            </ul>
             <% end %>
           </td>
         </tr>
@@ -30,14 +34,26 @@
 
       <h1>オススメ商品</h1>
       <div class="items-index">
-        <% @items.each do |item| %>
-          <!--<div class="item-index-image">-->
-            <%= attachment_image_tag item, :image, format: 'jpg', class: "profile-img", size: "150x150" %><br>
-          <!--</div>-->
-            <%= item.name %><br>
-            ¥<%= item.non_taxed_price %>
+        <% @items.first(4).each do |item| %>
+          <ul>
+            <li>
+              <%= attachment_image_tag item, :image, format: 'jpg', class: "profile-img", size: "150x100" %>
+            </li>
+            <li>
+              <%= item.name %>
+            </li>
+            <li>
+              ¥<%= item.non_taxed_price %>
+            </li>
+          </ul>
         <% end %>
+
+
       </div>
+
+      <p class="pull-right">
+        <%= link_to "もっと見る", items_path %>
+      </p>
     </div>
 
   </div>
