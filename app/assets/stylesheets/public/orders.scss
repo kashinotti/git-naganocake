@@ -1,0 +1,168 @@
+// Place all the styles related to the public/orders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//注文情報入力画面のCSS
+.order-new-head {
+  padding-left: 70px;
+}
+
+.payment-radio {
+  padding-left: 50px;
+}
+
+.address-radio {
+  padding-left: 50px;
+}
+
+.address-detail {
+  padding-left: 50px;
+}
+
+.new-address {
+  width: 700px;
+  margin-left: 100px;
+}
+
+.new-address th {
+  width: 25%;
+}
+
+.new-address-form {
+  padding-bottom: 10px;
+}
+
+.info-submit {
+  padding-top: 20px;
+}
+
+//注文情報確認画面のCSS
+
+.confirm {
+  width: 90%;
+}
+
+.confirm span {
+  margin-left: 200px;
+}
+
+.confirm-table {
+  display: flex;
+}
+
+.confirm-table-1 {
+  width: 700px;
+  margin-left: 100px;
+}
+
+.confirm-table-1 th {
+  background-color: silver;
+}
+
+.confirm-table-1 tr {
+  height: 50px;
+}
+
+.confirm-thead-name {
+  width: 60%;
+}
+
+.confirm-thead {
+  width: 20%;
+}
+
+.confirm-table-2 {
+  width: 200px;
+  margin-left: 100px;
+}
+
+.confirm-table-2 th {
+  background-color: silver;
+}
+
+.confirm-table-2 tr {
+  height: 50px;
+}
+
+.confirm-payment {
+  display: flex;
+  margin-left: 100px;
+}
+
+.confirm-payment p {
+  margin-left: 10px;
+  line-height: 50px;
+}
+
+.confirm-address {
+  display: flex;
+  margin-left: 100px;
+}
+
+.confirm-address p {
+  margin-left: 10px;
+}
+
+.confirm-btn {
+  margin-top: 20px;
+  text-align: center;
+  width: 100px;
+}
+
+//購入完了画面のCSS
+
+.complete {
+  height: 400px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+
+//注文履歴画面のCSS
+.order-history {
+  width: 100%;
+}
+
+.order-history th {
+  background-color: silver;
+  height: 60px;
+}
+
+//注文履歴詳細画面のCSS
+
+.order-show-info {
+  width: 100%;
+  display: flex;
+}
+
+
+.order-show-table {
+  width: 700px;
+}
+
+.order-show-table th {
+  background-color: silver;
+}
+
+.payment-info {
+  margin-left: 20px;
+}
+
+.payment-info-table {
+  width: 300px;
+}
+
+.payment-info-table th {
+  background-color: silver;
+}
+
+
+.order-content-table th {
+  height: 50px;
+  background-color: silver;
+}
+
+.order-content-table td {
+  height: 50px;
+}

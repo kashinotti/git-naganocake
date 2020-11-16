@@ -1,15 +1,67 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Naganocake</title>
+    <title>naganocake</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="header-title navbar navbar-nav navbar-left">LOGO</h1>
+      <ul class="header-list nav navbar-nav navbar-right">
+        <% if customer_signed_in? %>
+          <li>
+            <%= link_to  customers_path do %>
+              <button class="btn btn-primary">マイページ</button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to items_path do %>
+              <button class="btn btn-success">商品一覧</button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to cart_items_path do %>
+              <button class="btn btn-info">カート</button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to  destroy_customer_session_path, :method => :delete do %>
+              <button class="btn btn-warning">ログアウト</button>
+            <% end %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to '/about' do %>
+              <button class="btn btn-primary">About</button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to items_path do %>
+              <button class="btn btn-success">商品一覧</button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_customer_registration_path do %>
+              <button class="btn btn-info">新規登録</button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_customer_session_path do %>
+              <button class="btn btn-warning">ログイン</button>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </header>
 
-  <body>
-    <%= yield %>
-  </body>
+  <%= yield %>
+
+
+  <footer></footer>
+
+</body>
 </html>

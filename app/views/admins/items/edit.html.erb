@@ -1,0 +1,73 @@
+<div class="container">
+  <h3><span class="label label-default">商品編集</span></span></h1>
+
+  <div class="admins-edit">
+    <div class="admins-edit-image">
+     <%= attachment_image_tag @item, :image, format: 'jpg', class: "profile-img", size: "300x200" %>
+    </div>
+
+
+    <%= form_with model:@item, url: admins_item_path, local:true do |f| %>
+
+    <table class="admins-item-edit-table">
+      <tr>
+        <th>
+          商品名
+        </th>
+        <td>
+          <%= f.text_field :name %>
+        </td>
+      </tr>
+
+
+
+      <tr>
+        <th>
+          商品説明
+        </th>
+        <td>
+          <%= f.text_area :introduction %>
+        </td>
+      </tr>
+
+
+
+      <tr>
+        <th>
+          ジャンル
+        </th>
+        <td>
+          <%= f.collection_select :genre_id, Genre.all, :id, :name %>
+        </td>
+      </tr>
+
+
+
+      <tr>
+        <th>
+          税抜価格
+        </th>
+        <td>
+          <%= f.text_field :non_taxed_price %>
+        </td>
+      </tr>
+
+
+      <tr>
+        <th>
+          販売ステータス
+        </th>
+        <td>
+          <%= f.select :is_active, [['販売中', true], ['売切', false]] %>
+        </td>
+      </tr>
+    </table>
+
+
+    <div class="item-edit-btn pull-right">
+        <%= f.submit '変更を保存', class: "btn btn-lg btn-primary" %>
+    </div>
+
+    <% end %>
+  </div>
+</div>

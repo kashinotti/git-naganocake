@@ -1,0 +1,47 @@
+// Place all the styles related to the admins/customers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//管理者会員一覧のCSS
+
+.admins-customer-index-table {
+  width: 100%;
+}
+
+.admins-customer-index-table th {
+  background-color: silver;
+  height: 40px;
+}
+
+.admins-customer-index-table td {
+  height: 50px;
+}
+
+//管理者会員詳細画面のCSS
+
+.admins-customer-show-table {
+ margin-top: 40px;
+ margin-bottom: 30px;
+ line-height: 30px;
+}
+
+
+.admins-customer-show-table th {
+  width: 20%;
+}
+
+.admins-customer-show-table td {
+  width: 70%;
+}
+
+//管理者会員情報編集のCSS
+
+.admins-customer-edit-table {
+  line-height: 20px;
+  margin: 40px 0;
+}
+
+.admins-customer-edit-table tr {
+  margin: 10px 0;
+}

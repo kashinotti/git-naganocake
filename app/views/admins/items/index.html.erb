@@ -1,0 +1,30 @@
+<div class="container">
+  <h3><span class="label label-default">商品一覧</span></span></h1>
+
+  <%= link_to '+', new_admins_item_path, class: "new_button" %>
+
+
+  <table class="admins-items-index table-bordered">
+    <tr>
+      <th>商品ID</th>
+      <th>商品名</th>
+      <th>税抜価格</th>
+      <th>ジャンル</th>
+      <th>ステータス</th>
+    </tr>
+
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.id %></td>
+        <td><%= link_to item.name, admins_item_path(item.id) %></td>
+        <td><%= item.non_taxed_price %></td>
+        <td><%= item.genre.name %></td>
+        <td><%= item.is_active %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<div class="admins-items-paginate text-center">
+  <%= paginate @items %>
+</div>

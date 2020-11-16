@@ -1,0 +1,32 @@
+<div class="item-show container">
+  <div class="row">
+    <div class="col-xs-3">
+      <h2>ジャンル検索</h2>
+    </div>
+    <div class="item-image col-xs-4">
+      <%= attachment_image_tag @item, :image, format: 'jpg', class: "pull-left profile-img", size: "300x250" %>
+    </div>
+    <div class="item-detail col-xs-5">
+      <h1><%= @item.name %></h1>
+      <div class="item-introduction">
+        <%= @item.introduction %>
+      </div>
+      <p>¥<%= (@item.non_taxed_price * 1.1).round %>(税込）</p>
+    </div>
+
+    <%= form_with model:@cart_item, url: cart_items_path, local:true do |f| %>
+
+    <% if customer_signed_in? %>
+      <%= f.hidden_field :customer_id, :value => current_customer.id %>
+    <% end %>
+      <%= f.hidden_field :item_id, :value => @item.id %>
+
+    <%= f.number_field :count %>
+
+
+    <%= f.submit 'カートに入れる', class: 'btn btn-primary' %>
+
+    <% end %>
+
+  </div>
+</div>

@@ -13,3 +13,55 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+header {
+  background-color: gray;
+}
+
+footer {
+  width: 100%;
+  height: 80px;
+  background-color: gray;
+  position: absolute;
+  bottom: 0;
+  clear: both;
+}
+
+
+// 管理者のログイン画面のCSS
+.admin_email {
+  padding-bottom: 30px;
+}
+
+.admin_password {
+  padding-bottom: 30px;
+}
+
+.admin_login_btn {
+  padding-left: 240px;
+}
+
+// 顧客新規登録画面のCSS
+
+.registrations_form {
+  padding-bottom: 10px;
+}
+
+// .first_name_label {
+//   padding-left: 30px;
+// }
+
+
+// 管理者側の商品一覧のCSS
+
+.new_button {
+  font-size: 40px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+
+

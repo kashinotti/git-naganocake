@@ -1,0 +1,36 @@
+// Place all the styles related to the homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//トップページのCSS
+
+.top-explain-1 {
+  padding: 80px 0;
+  font-size: 20px;
+}
+
+.top-genre {
+  height: 300px;
+}
+
+.top-genre table {
+  width: 200px;
+}
+
+.top-genre th {
+ font-size: 20px;
+}
+
+.top-genre ul {
+  list-style: none;
+}
+
+.items-index {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.items-index ul {
+  list-style: none;
+}

@@ -1,0 +1,76 @@
+// Place all the styles related to the admins/Items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//管理者商品一覧のCSS
+
+.admins-items-index {
+  width: 100%;
+}
+
+.admins-items-index th {
+  background-color: silver;
+  height: 30px;
+}
+
+.admins-items-index td {
+  height: 40px;
+}
+
+
+//管理者商品詳細のCSS
+
+.admins-item_show {
+  margin-top: 80px;
+  display: flex;
+}
+
+.admins-item-show-image {
+  margin-right: 60px;
+}
+
+.admins-item-show-table {
+  line-height: 50px;
+}
+
+.admins-item-edit-link {
+ margin-top: 30px;
+}
+
+//管理者商品編集のCSS
+
+.admins-edit {
+  margin-top: 80px;
+  display: flex;
+}
+
+.admins-edit-image {
+  margin-right: 80px;
+}
+
+.admins-item-edit-table th {
+  width: 10%;
+}
+
+.admins-item-edit-table td {
+  width: 90%;
+}
+
+.item-edit-btn {
+  margin-top: 30px;
+}
+
+.admins-item-edit-table {
+  line-height: 30px;
+}
+
+//商品新規追加のCSS
+
+.admins-item-new {
+  margin-top: 80px;
+}
+
+.admins-item-new-table tr {
+ line-height: 30px;
+}

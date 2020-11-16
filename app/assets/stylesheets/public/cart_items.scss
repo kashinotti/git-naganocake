@@ -1,0 +1,74 @@
+// Place all the styles related to the public/cart_items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//カート内商品一覧のCSS
+.cart_item_index {
+  width: 80%;
+  padding-top: 80px;
+}
+
+.cart-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-table {
+  width: 100%;
+}
+
+.cart-table thead {
+  background-color: silver;
+}
+.cart-table tr {
+  height: 60px;
+}
+
+.th-item-name {
+  width: 40%;
+}
+
+.th-item-price {
+  width: 15%;
+}
+
+.th-item-count {
+  width: 15%;
+}
+
+.th-item-total-price {
+  width: 15%;
+}
+
+.th-item-destroy {
+  width: 15%;
+}
+
+.cart-table td {
+  line-height: 60px;
+}
+
+.cart-count-form {
+  width: 50%;
+  height: 30px;
+}
+
+.cart-delete {
+  text-align: center;
+}
+
+.total-payment {
+  width: 200px;
+  height: 60px;
+}
+
+.total-payment th {
+  background-color: silver;
+}
+
+.row {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+

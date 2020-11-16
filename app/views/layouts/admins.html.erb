@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>naganocake</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="header-title navbar navbar-nav navbar-left">LOGO</h1>
+      <ul class="header-list nav navbar-nav navbar-right">
+        <% if admins_admin_signed_in? %>
+          <li>
+            <%= link_to admins_items_path do %>
+              <button class="btn btn-primary">商品一覧</button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admins_customers_path do %>
+              <button class="btn btn-success">会員一覧</button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admins_orders_path do %>
+              <button class="btn btn-info">注文履歴一覧</button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to  admins_genres_path do %>
+              <button class="btn btn-danger">ジャンル一覧</button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to  destroy_admins_admin_session_path, :method => :delete do %>
+              <button class="btn btn-warning">ログアウト</button>
+            <% end %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to '/about' do %>
+              <button class="btn btn-primary">About</button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admins_items_path do %>
+              <button class="btn btn-success">商品一覧</button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_customer_registration_path do %>
+              <button class="btn btn-info">新規登録</button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_admins_admin_session_path do %>
+              <button class="btn btn-warning">ログイン</button>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </header>
+
+  <%= yield %>
+<footer></footer>
+</body>
+</html>
